@@ -36,7 +36,7 @@ module.exports = {
         const clindOtpCode = {
             from: process.env.NODEMAILER_USER, // sender address
             to: email, // list of receivers
-            subject: 'FauxSpot Email Varification',
+            subject: 'FauxSpot Email Verification',
             template: "email",
             context: {
                 otp: otpCode

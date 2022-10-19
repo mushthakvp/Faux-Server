@@ -21,7 +21,7 @@ module.exports = {
             const match = await User.findOne({ user_mail: user_mail })
 
             if (match) {
-                res.status(404).json({ "status": false, "message": "user already registerd" })
+                res.status(404).json({ "status": false, "message": "user already registered" })
 
             } else {
 
@@ -107,16 +107,16 @@ module.exports = {
 
                 if (match) {
                     if (findUser.user_isVerified) {
-                        res.status(200).json({ "status": true, "message": "Loged in succsess", "token": token, "refreshToken": refreshToken , "_id" : findUser.id })
+                        res.status(200).json({ "status": true, "message": "Logged in success", "token": token, "refreshToken": refreshToken , "_id" : findUser.id })
                     } else {
                         res.status(401).json({ "status": false, "message": "User n't verified", "token": "" })
                     }
                 } else {
-                    res.status(401).json({ "status": false, "message": "Password Dosen't Match", "token": "" })
+                    res.status(401).json({ "status": false, "message": "Password doesn't Match", "token": "" })
                 }
 
             } else {
-                res.status(401).json({ "status": false, "message": "User n't registerd", "token": "" })
+                res.status(401).json({ "status": false, "message": "User n't registered", "token": "" })
             }
 
         } catch (error) {
@@ -184,7 +184,7 @@ module.exports = {
                 console.log("account verified");
                 await User.findByIdAndUpdate({ _id: _id }, { $set: { user_isVerified: true } })
 
-                res.status(200).json({ "status": true, "token": token, "refreshToken": refreshToken, "message": "Sucsess" })
+                res.status(200).json({ "status": true, "token": token, "refreshToken": refreshToken, "message": "Success" })
             } else {
                 console.log("error");
                 res.status(401).json({ "status": false, "token": "", "message": "Check OTP" })

@@ -5,9 +5,9 @@ const productSchema = new mongoose.Schema(
         turf_creator_id: { type: String },
         turf_name: { type: String },
         turf_place: { type: String },
-        turf_muncipality: { type: String },
+        turf_municipality: { type: String },
         turf_district: { type: String },
-        turf_catogery:
+        turf_category:
         {
             turf_cricket: { type: Boolean },
             turf_football: { type: Boolean },
@@ -21,7 +21,7 @@ const productSchema = new mongoose.Schema(
             turf_sixes: { type: Boolean },
         },
         turf_info: { 
-            turf_isAvailale: { type: Boolean },
+            turf_isAvailable: { type: Boolean },
             turf_rating: { type: Number },
             turf_map : { type: String },
         },

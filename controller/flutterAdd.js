@@ -13,14 +13,14 @@ module.exports = {
                 turf_creator_id: dbObj.data[0].turf_creator_id,
                 turf_name: dbObj.data[0].turf_name,
                 turf_place: dbObj.data[0].turf_place,
-                turf_muncipality: dbObj.data[0].turf_muncipality,
+                turf_municipality: dbObj.data[0].turf_municipality,
                 turf_district: dbObj.data[0].turf_district,
-                turf_catogery:
+                turf_category:
                 {
-                  turf_cricket: dbObj.data[0].turf_catogery.turf_cricket,
-                  turf_football: dbObj.data[0].turf_catogery.turf_football,
-                  turf_badminton: dbObj.data[0].turf_catogery.turf_badminton,
-                  turf_yoga: dbObj.data[0].turf_catogery.turf_yoga,
+                  turf_cricket: dbObj.data[0].turf_category.turf_cricket,
+                  turf_football: dbObj.data[0].turf_category.turf_football,
+                  turf_badminton: dbObj.data[0].turf_category.turf_badminton,
+                  turf_yoga: dbObj.data[0].turf_category.turf_yoga,
                 }
                 ,
                 turf_type:
@@ -29,7 +29,7 @@ module.exports = {
                   turf_sixes: dbObj.data[0].turf_type.turf_sixes,
                 },
                 turf_info: {
-                  turf_isAvailale: dbObj.data[0].turf_info.turf_isAvailale,
+                  turf_isAvailable: dbObj.data[0].turf_info.turf_isAvailable,
                   turf_rating: dbObj.data[0].turf_info.turf_rating,
                   turf_map: dbObj.data[0].turf_info.turf_map,
                 },
