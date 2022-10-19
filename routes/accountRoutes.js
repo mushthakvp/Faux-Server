@@ -16,8 +16,8 @@ router.post("/loginwith-number", accountController.mobileSignup)
 
 router.post("/refresh-token" , refreshController.refreshAccessToken)
 
-router.post("/add-booking" , bookingController.addDetails)
+router.post("/add-booking" , bookingController.addBooking)
 
-router.post("/add-booking" , bookingController.addDetails)
+router.get("/get-booking" , bookingController.getBooking)
 
 module.exports = router
