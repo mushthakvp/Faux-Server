@@ -1,0 +1,44 @@
+{
+  "name": "com.fauxspot.musthak",
+  "version": "3.0.1",
+  "description": "Its a open source turf booking api",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MushthakVP/FauxSpot-Turf-Booking-Server.git"
+  },
+  "keywords": [
+    "Faux",
+    "Spot"
+  ],
+  "author": "mushthak vp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MushthakVP/FauxSpot-Turf-Booking-Server/issues"
+  },
+  "homepage": "https://github.com/MushthakVP/FauxSpot-Turf-Booking-Server#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cloudinary": "^1.30.1",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.7.8",
+    "nodemailer-express-handlebars": "^5.0.0",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "promise": "^8.2.0",
+    "twilio": "^3.82.0"
+  }
+}
