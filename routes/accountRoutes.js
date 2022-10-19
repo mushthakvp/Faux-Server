@@ -18,6 +18,6 @@ router.post("/refresh-token" , refreshController.refreshAccessToken)
 
 router.post("/add-booking" , bookingController.addBooking)
 
-router.get("/get-booking" , bookingController.getBooking)
+router.get("/get-booking/:id" , bookingController.getBooking)
 
 module.exports = router
