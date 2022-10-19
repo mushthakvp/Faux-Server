@@ -19,12 +19,12 @@ module.exports = {
     }
   }),
   getBooking: asyncHandler(async (req, res) => {
-    Booking.find((err, data) => {
-      if (!err) {
-        res.status(200).json({ status: true, data: data });
-      } else {
-        res.status(401).json({ status: false, message: err });
-      }
-    });
+    try {
+      const turf_id = req.params.id;
+      const booking = await Booking.find({ turf_id: turf_id }).select("-__v");
+      res.status(200).json({ status: true, data: booking });
+    } catch (error) {
+      res.status(401).json({ status: false, message: error.message });
+    }
   }),
 };
