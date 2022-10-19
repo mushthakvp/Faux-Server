@@ -14,6 +14,7 @@ module.exports = {
         time_period: req.body.time_period,
       });
       await booking.save();
+      res.status(200).json({ status: true, data: booking });
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
     }
