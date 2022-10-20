@@ -153,50 +153,57 @@ Response
 
 {
   "status": true,
-  "length": 1,
+  "length": 5,
   "data": [
     {
       "turf_category": {
-        "turf_cricket": false,
+        "turf_cricket": true,
         "turf_football": false,
         "turf_badminton": false,
-        "turf_yoga": true
+        "turf_yoga": false
       },
       "turf_type": {
-        "turf_sevens": false,
-        "turf_sixes": false
+        "turf_sevens": true,
+        "turf_sixes": true
       },
       "turf_info": {
         "turf_isAvailable": true,
-        "turf_rating": 3.2,
+        "turf_rating": 3,
         "turf_map": "https://goo.gl/maps/J52rSt5Kj2byPpDTA"
       },
       "turf_amenities": {
         "turf_washroom": true,
         "turf_water": true,
-        "turf_dressing": true,
+        "turf_dressing": false,
         "turf_parking": true,
-        "turf_gallery": false,
+        "turf_gallery": true,
         "turf_cafeteria": true
       },
       "turf_images": {
-        "turf_images1": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287435/FauxSpotServer/6musthak1.jpg",
-        "turf_images2": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287438/FauxSpotServer/1musthak4.jpg",
-        "turf_images3": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287441/FauxSpotServer/3musthak9.jpg"
+        "turf_images1": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265380/FauxSpotServer/6musthak8.jpg",
+        "turf_images2": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265388/FauxSpotServer/1musthak8.jpg",
+        "turf_images3": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265393/FauxSpotServer/4musthak4.jpg"
       },
       "turf_time": {
-        "time_morning": "100",
-        "time_afternoon": "100",
-        "time_evening": "100"
+        "time_morning_start": 5,
+        "time_morning_end": 11,
+        "time_afternoon_start": 15,
+        "time_afternoon_end": 17,
+        "time_evening_start": 17,
+        "time_evening_end": 24
       },
-      "_id": "634d4e83f856564bcd05a237",
-      "turf_user_id": "63469bcad9ce0474dd70083c",
+      "turf_price": {
+        "morning_price": 500,
+        "afternoon_price": 800,
+        "evening_price": 700
+      },
+      "_id": "6351322927a2de305de2abe1",
       "turf_creator_id": "63355665136e1b3ecb0db5d6",
-      "turf_name": "Yoga Delight",
-      "turf_place": "Thenhipalam",
-      "turf_municipality": "Tirurangadi",
+      "turf_name": "Moratuwa Stadiu",
+      "turf_place": "Kakkanchery",
+      "turf_municipality": "Tirur",
       "turf_district": "Malappuram",
-      "__v": 0
+      "turf_logo": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265627/FauxTurf/neerajmohan_Order_2520_FO3E1E393886_KZ00A__u2jgvn.png"
     }
   ]
 }
@@ -215,11 +222,13 @@ Get Method
 Response
 
 {
+  "status": true,
+  "length": 5,
   "data": [
     {
       "turf_category": {
-        "turf_cricket": false,
-        "turf_football": true,
+        "turf_cricket": true,
+        "turf_football": false,
         "turf_badminton": false,
         "turf_yoga": false
       },
@@ -229,33 +238,42 @@ Response
       },
       "turf_info": {
         "turf_isAvailable": true,
-        "turf_rating": 3.2,
-        "turf_map": "https://goo.gl/maps/hNeKFEpkHocAJyzdA"
+        "turf_rating": 3,
+        "turf_map": "https://goo.gl/maps/J52rSt5Kj2byPpDTA"
       },
       "turf_amenities": {
-        "turf_washroom": false,
+        "turf_washroom": true,
         "turf_water": true,
-        "turf_dressing": true,
+        "turf_dressing": false,
         "turf_parking": true,
-        "turf_gallery": false,
+        "turf_gallery": true,
         "turf_cafeteria": true
       },
       "turf_images": {
-        "turf_images1": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287855/FauxSpotServer/1musthak8.jpg",
-        "turf_images2": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287864/FauxSpotServer/7musthak2.jpg",
-        "turf_images3": "https://res.cloudinary.com/fouvtycloud/image/upload/v1665287868/FauxSpotServer/6musthak5.jpg"
+        "turf_images1": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265380/FauxSpotServer/6musthak8.jpg",
+        "turf_images2": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265388/FauxSpotServer/1musthak8.jpg",
+        "turf_images3": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265393/FauxSpotServer/4musthak4.jpg"
       },
       "turf_time": {
-        "time_morning": "1000",
-        "time_afternoon": "1200",
-        "time_evening": "1600"
+        "time_morning_start": 5,
+        "time_morning_end": 11,
+        "time_afternoon_start": 15,
+        "time_afternoon_end": 17,
+        "time_evening_start": 17,
+        "time_evening_end": 24
       },
-      "_id": "6342471956b46c8435fc95fb",
+      "turf_price": {
+        "morning_price": 500,
+        "afternoon_price": 800,
+        "evening_price": 700
+      },
+      "_id": "6351322927a2de305de2abe1",
       "turf_creator_id": "63355665136e1b3ecb0db5d6",
-      "turf_name": "Crashing Amigos",
-      "turf_place": "Kottapuram",
-      "turf_municipality": "Tirurangadi",
-      "turf_district": "Malappuram"
+      "turf_name": "Moratuwa Stadiu",
+      "turf_place": "Kakkanchery",
+      "turf_municipality": "Tirur",
+      "turf_district": "Malappuram",
+      "turf_logo": "https://res.cloudinary.com/fouvtycloud/image/upload/v1666265627/FauxTurf/neerajmohan_Order_2520_FO3E1E393886_KZ00A__u2jgvn.png"
     }
   ]
 }
