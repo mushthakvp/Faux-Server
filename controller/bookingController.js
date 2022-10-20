@@ -8,7 +8,7 @@ module.exports = {
         user_id: req.body.user_id,
         turf_id: req.body.turf_id,
         booking_date: req.body.booking_date,
-        turf_index: req.body.turf_index,
+        turf_index: [req.body.turf_index],
         booking_price: req.body.booking_price,
         booking_status: req.body.booking_status,
         time_period: req.body.time_period,

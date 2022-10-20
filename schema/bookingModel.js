@@ -7,7 +7,7 @@ const bookingSchema = new mongoose.Schema(
         user_id : {type : String},
         turf_id : {type : String},
         turf_index : {type : Number},
-        time_period : {type : String},
+        time_period : {type : Array},
         booking_price : {type : Number}
     }
 )
