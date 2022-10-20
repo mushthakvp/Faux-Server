@@ -20,13 +20,13 @@ Link Cloudinary : https://cloudinary.com/
 
 PORT = 3000
 MONGO_URI = "Your Database URL "
-JWT_SECRET = "mushthak"
+JWT_SECRET = "musthak"
 NODEMAILER_PASS = "Your Email id "
 NODEMAILER_USER = "Your Email Password " 
 
 TWILIO_ACCOUNT_SID = "Your Twilio Sid"
 TWILIO_AUTH_TOKEN = "Your Twilio Token"
-TWILIO_SERVIECE_ID = "Your Twilio Service ID"
+TWILIO_SERVICE_ID = "Your Twilio Service ID"
 
 Link Twilio : https://www.twilio.com
 ```
@@ -98,8 +98,8 @@ Response
 
 {
     "status": true,
-    "message": "Loged in succsess",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjZlN"
+    "message": "Logged in success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXCVI9.eyJpZCI6IjYzMjZlN"
 }
 ```
 
@@ -140,7 +140,7 @@ Response
 
 {
     "status": true,
-    "jwt": "eyJhbGcfhjkh.kjhioudyhuy.dshuihddja6PCXcwdjh5A1Rc"
+    "jwt": "eyJhbGcfhjkh.kjhioudyhuy.dshuihddja6PCXcode5A1Rc"
 }
 ```
 Fetch Wishlist
@@ -156,7 +156,7 @@ Response
   "length": 1,
   "data": [
     {
-      "turf_catogery": {
+      "turf_category": {
         "turf_cricket": false,
         "turf_football": false,
         "turf_badminton": false,
@@ -167,7 +167,7 @@ Response
         "turf_sixes": false
       },
       "turf_info": {
-        "turf_isAvailale": true,
+        "turf_isAvailable": true,
         "turf_rating": 3.2,
         "turf_map": "https://goo.gl/maps/J52rSt5Kj2byPpDTA"
       },
@@ -194,7 +194,7 @@ Response
       "turf_creator_id": "63355665136e1b3ecb0db5d6",
       "turf_name": "Yoga Delight",
       "turf_place": "Thenhipalam",
-      "turf_muncipality": "Tirurangadi",
+      "turf_municipality": "Tirurangadi",
       "turf_district": "Malappuram",
       "__v": 0
     }
@@ -217,7 +217,7 @@ Response
 {
   "data": [
     {
-      "turf_catogery": {
+      "turf_category": {
         "turf_cricket": false,
         "turf_football": true,
         "turf_badminton": false,
@@ -228,7 +228,7 @@ Response
         "turf_sixes": true
       },
       "turf_info": {
-        "turf_isAvailale": true,
+        "turf_isAvailable": true,
         "turf_rating": 3.2,
         "turf_map": "https://goo.gl/maps/hNeKFEpkHocAJyzdA"
       },
@@ -254,7 +254,7 @@ Response
       "turf_creator_id": "63355665136e1b3ecb0db5d6",
       "turf_name": "Crashing Amigos",
       "turf_place": "Kottapuram",
-      "turf_muncipality": "Tirurangadi",
+      "turf_municipality": "Tirurangadi",
       "turf_district": "Malappuram"
     }
   ]
