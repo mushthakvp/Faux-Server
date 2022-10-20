@@ -19,7 +19,7 @@ module.exports = {
     try {
       const findData = await Product.find({ turf_district: turf_district });
 
-      res.status(200).json({ status: false, data: findData });
+      res.status(200).json({ status: true, data: findData });
     } catch (error) {
       res.status(401).json({ status: false, message: `invalid 401 ${error}` });
     }

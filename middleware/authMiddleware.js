@@ -31,7 +31,7 @@ const protect = asyncHandler(async (req, res, next) => {
 
             } else {
 
-                res.status(401).json({ "status": false, "message": "Invlaid token" });
+                res.status(403).json({ "status": false, "message": "Invalid token" });
             }
         }
     }
