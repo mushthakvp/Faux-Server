@@ -1,6 +1,6 @@
 {
   "name": "com.fauxspot.musthak",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "Its a open source turf booking api",
   "main": "app.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "Faux",
     "Spot"
   ],
-  "author": "mushthak vp",
+  "author": "musthak vp",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MushthakVP/FauxSpot-Turf-Booking-Server/issues"
@@ -40,5 +40,6 @@
     "path": "^0.12.7",
     "promise": "^8.2.0",
     "twilio": "^3.82.0"
-  }
+  },
+  "devDependencies": {}
 }
