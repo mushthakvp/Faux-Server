@@ -19,10 +19,12 @@ module.exports = {
       });
       if (findData) {
         for (let i = 0; i < tIndex.length; i++) {
-          await Booking.findOneAndUpdate(
-            { findData },
-            { $push: { turf_index: tIndex[i] } }
-          );
+          if (findData.turf_index[i] != tIndex[i]) {
+            await Booking.findOneAndUpdate(
+              { findData },
+              { $push: { turf_index: tIndex[i] } }
+            );
+          }
         }
         res
           .status(200)
