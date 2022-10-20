@@ -41,10 +41,19 @@ module.exports = {
           turf_images3: dbObj.data[0].turf_images.turf_images3,
         },
         turf_time: {
-          time_morning: dbObj.data[0].turf_time.time_morning,
-          time_afternoon: dbObj.data[0].turf_time.time_afternoon,
-          time_evening: dbObj.data[0].turf_time.time_evening,
+          time_morning_start : dbObj.data[0].turf_time.time_morning_start,
+          time_morning_end : dbObj.data[0].turf_time.time_morning_end,
+          time_afternoon_start : dbObj.data[0].turf_time.time_afternoon_start,
+          time_afternoon_end : dbObj.data[0].turf_time.time_afternoon_end,
+          time_evening_start : dbObj.data[0].turf_time.time_evening_start,
+          time_evening_end : dbObj.data[0].turf_time.time_evening_end,
         },
+        turf_price : {
+          morning_price : dbObj.data[0].turf_price.morning_price,
+          afternoon_price : dbObj.data[0].turf_price.afternoon_price,
+          evening_price : dbObj.data[0].turf_price.evening_price,
+        },
+        turf_logo : dbObj.data[0].turf_logo,
       });
 
       await product.save();
