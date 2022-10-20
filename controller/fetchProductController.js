@@ -17,9 +17,13 @@ module.exports = {
     const turf_district = req.params.place;
 
     try {
-      const findData = await Product.find({ turf_district: turf_district }).select("-__v");
+      const findData = await Product.find({
+        turf_district: turf_district,
+      }).select("-__v");
 
-      res.status(200).json({ status: true, data: findData });
+      res
+        .status(200)
+        .json({ status: true, "length": findData.length, data: findData });
     } catch (error) {
       res.status(401).json({ status: false, message: `invalid 401 ${error}` });
     }
