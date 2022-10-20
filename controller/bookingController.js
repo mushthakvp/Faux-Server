@@ -13,8 +13,26 @@ module.exports = {
         booking_status: req.body.booking_status,
         time_period: req.body.time_period,
       });
-      await booking.save();
-      res.status(200).json({"status": "success", "message": "Booking added successfully"});
+      let tIndex = req.body.turf_index;
+      const findData = await Booking.findOne({
+        booking_date: req.body.booking_date,
+      });
+      if (findData) {
+        for (let i = 0; i < tIndex.length; i++) {
+          await Booking.findOneAndUpdate(
+            { findData },
+            { $push: { turf_index: tIndex[i] } }
+          );
+        }
+        res
+          .status(200)
+          .json({ status: "success", message: "Booking added successfully" });
+      } else {
+        await booking.save();
+        res
+          .status(200)
+          .json({ status: "success", message: "Booking added successfully" });
+      }
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
     }
