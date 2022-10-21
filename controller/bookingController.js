@@ -13,27 +13,26 @@ module.exports = {
         booking_status: req.body.booking_status,
         time_period: req.body.time_period,
       });
-      let tIndex = req.body.turf_index;
-      const findData = await Booking.findOne({
-        booking_date: req.body.booking_date,
-      });
-      if (findData) {
-        for (let i = 0; i < tIndex.length; i++) {
-          if (findData.turf_index[i] != tIndex[i]) {
-            await Booking.findOneAndUpdate(
-              { findData },
-              { $push: { turf_index: tIndex[i] } }
-            );
+
+      const findTurf = await Booking.findOne({ urf_id: req.body.turf_id });
+
+      if (findTurf) {
+        let tIndex = req.body.turf_index;
+        const findData = await Booking.findOne({booking_date: req.body.booking_date});
+        if (findData) {
+          for (let i = 0; i < tIndex.length; i++) {
+            if (findData.turf_index[i] != tIndex[i]) {
+              await Booking.findOneAndUpdate({ findData }, );
+            }
           }
+          res.status(200).json({ status: "success", message: "Booking added successfully"});
+        } else {
+          await booking.save();
+          res.status(200).json({ status: "success", message: "Booking added successfully"});
         }
-        res
-          .status(200)
-          .json({ status: "success", message: "Booking added successfully" });
       } else {
         await booking.save();
-        res
-          .status(200)
-          .json({ status: "success", message: "Booking added successfully" });
+        res.status(200).json({ status: "success", message: "Booking added successfully"});
       }
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
