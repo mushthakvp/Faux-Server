@@ -14,15 +14,22 @@ module.exports = {
         time_period: req.body.time_period,
       });
 
-      const findTurf = await Booking.findOne({ urf_id: req.body.turf_id });
-
+      const findTurf = await Booking.findOne({ turf_id: req.body.turf_id });
+      console.log(findTurf);
+      
       if (findTurf) {
+        console.log("Turf already booked");
         let tIndex = req.body.turf_index;
+        console.log(req.body.turf_id);
+        console.log(tIndex);
         const findData = await Booking.findOne({booking_date: req.body.booking_date});
-        if (findData) {
+        console.log(findData);
+        if (findData) { 
           for (let i = 0; i < tIndex.length; i++) {
             if (findData.turf_index[i] != tIndex[i]) {
-              await Booking.findOneAndUpdate({ findData }, );
+              console.log(tIndex[i]);
+             await Booking.findOneAndUpdate({ turf_id : findTurf.turf_id}, { $push: { turf_index: tIndex[i] } });
+            
             }
           }
           res.status(200).json({ status: "success", message: "Booking added successfully"});
