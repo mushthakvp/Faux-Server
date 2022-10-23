@@ -5,40 +5,40 @@ module.exports = {
   addBooking: asyncHandler(async (req, res) => {
     try {
       const booking = new Booking({
-        user_id: req.body.user_id,
         turf_id: req.body.turf_id,
         booking_date: req.body.booking_date,
-        turf_index: req.body.turf_index,
-        booking_price: req.body.booking_price,
-        booking_status: req.body.booking_status,
-        time_period: req.body.time_period,
+        time_slot: req.body.time_slot,
       });
 
-      const findTurf = await Booking.findOne({ turf_id: req.body.turf_id });
-      console.log(`same turf id  ${findTurf}`);
-      
-      if (findTurf) {
-        let tIndex = req.body.turf_index;
-        console.log(req.body.turf_id);
-        console.log(tIndex);
-        const findData = await Booking.findOne({booking_date: req.body.booking_date});
-        console.log(`same date ${findData}`);
-        if (findData) { 
-          for (let i = 0; i < tIndex.length; i++) {
-            if (findData.turf_index[i] != tIndex[i]) {
-              console.log(tIndex[i]);
-             await Booking.findOneAndUpdate({ turf_id : findData.turf_id}, { $push: { turf_index: tIndex[i] } });
+      const findTurf = await Booking.find({ turf_id: req.body.turf_id });
+      if(findTurf){
+        let slot = req.body.time_slot;
+        let i = 0;
+        let flag = 0;
+        for ( i = 0; i < findTurf.length; i++) {
+          if (findTurf[i].booking_date === req.body.booking_date) {
+            flag++;
+            break
+          }
+        }
+        if(flag == 1){
+          for(let j = 0; j < slot.length; j++){
+            if(!findTurf[i].time_slot.includes(slot[j])){
+              await Booking.findOneAndUpdate({turf_id : findTurf[i].turf_id},{$push:{time_slot:slot[j]}});
             }
           }
-          res.status(200).json({ status: "success", message: "Turf count added"});
-        } else {
+          res.status(200).json({"message":"Booking Added Successfully"});
+        }else{
           await booking.save();
-          res.status(200).json({ status: "success", message: "Turf Time added successfully"});
+          res.status(200).json({"message":"Booking Already Exist"});
         }
-      } else {
+      }else{
         await booking.save();
-        res.status(200).json({ status: "success", message: "New Turf Booked successfully"});
+        res.status(200).json({message: "Booking Added Successfully"});
       }
+
+
+     
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
     }
