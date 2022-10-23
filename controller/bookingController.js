@@ -15,31 +15,29 @@ module.exports = {
       });
 
       const findTurf = await Booking.findOne({ turf_id: req.body.turf_id });
-      console.log(findTurf);
+      console.log(`same turf id  ${findTurf}`);
       
       if (findTurf) {
-        console.log("Turf already booked");
         let tIndex = req.body.turf_index;
         console.log(req.body.turf_id);
         console.log(tIndex);
         const findData = await Booking.findOne({booking_date: req.body.booking_date});
-        console.log(findData);
+        console.log(`same date ${findData}`);
         if (findData) { 
           for (let i = 0; i < tIndex.length; i++) {
             if (findData.turf_index[i] != tIndex[i]) {
               console.log(tIndex[i]);
-             await Booking.findOneAndUpdate({ turf_id : findTurf.turf_id}, { $push: { turf_index: tIndex[i] } });
-            
+             await Booking.findOneAndUpdate({ turf_id : findData.turf_id}, { $push: { turf_index: tIndex[i] } });
             }
           }
-          res.status(200).json({ status: "success", message: "Booking added successfully"});
+          res.status(200).json({ status: "success", message: "Turf count added"});
         } else {
           await booking.save();
-          res.status(200).json({ status: "success", message: "Booking added successfully"});
+          res.status(200).json({ status: "success", message: "Turf Time added successfully"});
         }
       } else {
         await booking.save();
-        res.status(200).json({ status: "success", message: "Booking added successfully"});
+        res.status(200).json({ status: "success", message: "New Turf Booked successfully"});
       }
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
