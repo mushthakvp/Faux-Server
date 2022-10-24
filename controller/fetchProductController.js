@@ -6,7 +6,7 @@ module.exports = {
     console.log(req.user);
     Product.find((err, data) => {
       if (!err) {
-        res.status(200).json({ status: true, data: data });
+        res.status(200).json({ status: true, data: data , length : data.length});
       } else {
         res.status(400).json({ status: false, message: err });
       }

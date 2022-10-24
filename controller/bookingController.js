@@ -26,14 +26,14 @@ module.exports = {
               await Booking.findOneAndUpdate({booking_date : findTurf[checkIndex].booking_date},{$push:{time_slot:slot[j]}});
             }
           }
-          res.status(200).json({"message":"Booking Added Successfully"});
+          res.status(200).json({"status" : true, "message":"Booking Added Successfully"});
         }else{
           await booking.save();
-          res.status(200).json({"message":"Booking Already Exist"});
+          res.status(200).json({"status" : true, "message":"Booking Added Successfully"});
         }
       }else{
         await booking.save();
-        res.status(200).json({message: "Booking Added Successfully 8746782689"});
+        res.status(200).json({"status" : true, message: "Booking Added Successfully"});
       }
 
     } catch (error) {
