@@ -9,22 +9,21 @@ module.exports = {
         booking_date: req.body.booking_date,
         time_slot: req.body.time_slot,
       });
-
+      let checkIndex = 0;
+      let flag = 0;
+      let slot = req.body.time_slot;
       const findTurf = await Booking.find({ turf_id: req.body.turf_id });
       if(findTurf){
-        let slot = req.body.time_slot;
-        let i = 0;
-        let flag = 0;
-        for ( i = 0; i < findTurf.length; i++) {
-          if (findTurf[i].booking_date === req.body.booking_date) {
+        for ( checkIndex = 0; checkIndex < findTurf.length; checkIndex++) {
+          if (findTurf[checkIndex].booking_date == req.body.booking_date) {
             flag++;
-            break
+            break;
           }
         }
         if(flag == 1){
           for(let j = 0; j < slot.length; j++){
-            if(!findTurf[i].time_slot.includes(slot[j])){
-              await Booking.findOneAndUpdate({turf_id : findTurf[i].turf_id},{$push:{time_slot:slot[j]}});
+            if(!findTurf[checkIndex].time_slot.includes(slot[j])){
+              await Booking.findOneAndUpdate({booking_date : findTurf[checkIndex].booking_date},{$push:{time_slot:slot[j]}});
             }
           }
           res.status(200).json({"message":"Booking Added Successfully"});
@@ -34,11 +33,9 @@ module.exports = {
         }
       }else{
         await booking.save();
-        res.status(200).json({message: "Booking Added Successfully"});
+        res.status(200).json({message: "Booking Added Successfully 8746782689"});
       }
 
-
-     
     } catch (error) {
       res.status(401).json({ status: false, message: error.message });
     }
