@@ -13,6 +13,8 @@ router.post("/add-wishlist" , wishlistController.addWhishList)
 
 router.get("/get-wishlist/:id" , wishlistController.getWhishList)
 
+router.delete("/delete-wishlist/:id" , wishlistController.deleteWishlist)
+
 router.get("/search-turf/:name" , fetchController.searchProducts)
 
 router.get("/nearest-turf/:place" , protect , fetchController.getNearbyProducts) 

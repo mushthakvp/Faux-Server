@@ -3,7 +3,6 @@ const mongoose = require("mongoose")
 const wishlistSchema = new mongoose.Schema(
     {
         turf_user_id: { type: String },
-        turf_creator_id: { type: String },
         turf_name: { type: String },
         turf_place: { type: String },
         turf_municipality: { type: String },
@@ -45,10 +44,19 @@ const wishlistSchema = new mongoose.Schema(
         ,
         turf_time:
         {
-            time_morning: { type: String },
-            time_afternoon: { type: String },
-            time_evening: { type: String },
-        }
+            time_morning_start: { type: Number },
+            time_morning_end: { type: Number },
+            time_afternoon_start: { type: Number },
+            time_afternoon_end: { type: Number },
+            time_evening_start: { type: Number },
+            time_evening_end: { type: Number },
+        },
+        turf_price : {
+            morning_price : { type: Number },
+            afternoon_price : { type: Number },
+            evening_price : { type: Number },
+        },
+        turf_logo : { type: String },
 
     }
 )
