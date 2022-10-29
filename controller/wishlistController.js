@@ -59,8 +59,8 @@ module.exports = {
       let flag = 0;
       const findUSer = await Wishlist.findOne({turf_user_id: dbObj.data[0].turf_user_id});
       if (findUSer) {
-        for(i = 0; i < findUSer.turf_user_id.length; i++){
-          if(findUSer[i].turf_user_id == dbObj.data[0].turf_name){
+        for(i = 0; i < findUSer.length; i++){
+          if(findUSer[i].turf_name == dbObj.data[0].turf_name){
             flag = 1;
             break;
           }
@@ -68,17 +68,13 @@ module.exports = {
         if(flag == 1){
           res.status(200).json({message: "Wishlist Added"});
         }else{
+          await wishlist.save();
           res.status(200).json({message: "wishlist already added"});
         }
       }else{
-        wishlist.save();
+        await wishlist.save();
         res.status(200).json({ message: "Wishlist Added" });
       }
-
-
-
-
-
     } catch (error) {
       res.status(401).json({ status: false, message: error });
     }
