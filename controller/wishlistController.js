@@ -104,9 +104,9 @@ module.exports = {
     try {
       const id = req.params.id;
       const deleteWishlist = await Wishlist.findByIdAndDelete(id);
-      res.status(200).json({ "status": true, data: deleteWishlist });
+      res.status(200).json({ "status": true, "message": "Wishlist deleted" });
     } catch (error) {
-      res.status(401).json({ "status": false, data: error });
+      res.status(401).json({ "status": false, "message": error});
     }
   }),
 };
