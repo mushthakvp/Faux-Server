@@ -6,9 +6,9 @@ module.exports = {
     try {
       const dbObj = req.body;
       console.log(dbObj);
-      console.log(dbObj.data[0].turf_user_id);
+      console.log(dbObj.turf_user_id);
       const wishlist = Wishlist({
-        turf_user_id: dbObj.data[0].turf_user_id,
+        turf_user_id: dbObj.turf_user_id,
         turf_logo: dbObj.data[0].turf_logo,
         turf_name: dbObj.data[0].turf_name,
         turf_place: dbObj.data[0].turf_place,
