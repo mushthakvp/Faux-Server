@@ -5,6 +5,7 @@ module.exports = {
   addWhishList: asyncHandler(async (req, res) => {
     try {
       const dbObj = req.body;
+      console.log(dbObj);
       console.log(dbObj.data[0].turf_user_id);
       const wishlist = Wishlist({
         turf_user_id: dbObj.data[0].turf_user_id,
