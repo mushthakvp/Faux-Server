@@ -88,13 +88,14 @@ module.exports = {
         turf_user_id: turf_user_id,
       });
 
+      const finalArray = findWhishList.map((item) => {return item});
 
       res
         .status(200)
         .json({
           status: true,
           length: findWhishList.length,
-          data: findWhishList
+          data: finalArray
         });
     } catch (error) {
       res
