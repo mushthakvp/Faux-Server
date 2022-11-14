@@ -41,6 +41,7 @@ module.exports = {
           turf_images1: dbObj.data[0].turf_images.turf_images1,
           turf_images2: dbObj.data[0].turf_images.turf_images2,
           turf_images3: dbObj.data[0].turf_images.turf_images3,
+          turf_images4: dbObj.data[0].turf_images.turf_images4,
         },
         turf_time: {
           time_morning_start: dbObj.data[0].turf_time.time_morning_start,
