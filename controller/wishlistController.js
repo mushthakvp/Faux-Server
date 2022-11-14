@@ -95,7 +95,7 @@ module.exports = {
         .json({
           status: true,
           length: findWhishList.length,
-          data: new Set(finalArray),
+          data: [...new Set(finalArray)],
         });
     } catch (error) {
       res
