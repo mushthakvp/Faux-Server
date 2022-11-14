@@ -88,12 +88,14 @@ module.exports = {
         turf_user_id: turf_user_id,
       });
 
+     const array =  Object.entries(findWhishList)
+
       res
         .status(200)
         .json({
           status: true,
           length: findWhishList.length,
-          data: new Set(findWhishList.toArray()),
+          data: new Set(array),
         });
     } catch (error) {
       res
