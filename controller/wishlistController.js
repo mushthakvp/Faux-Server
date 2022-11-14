@@ -93,7 +93,7 @@ module.exports = {
         .json({
           status: true,
           length: findWhishList.length,
-          data: findWhishList,
+          data: new Set(findWhishList.toArray()),
         });
     } catch (error) {
       res
