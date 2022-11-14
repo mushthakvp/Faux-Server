@@ -40,6 +40,7 @@ const wishlistSchema = new mongoose.Schema(
             turf_images1: { type: String },
             turf_images2: { type: String },
             turf_images3: { type: String },
+            turf_images4: { type: String },
         }
         ,
         turf_time:

@@ -5,9 +5,10 @@ module.exports = {
   addWhishList: asyncHandler(async (req, res) => {
     try {
       const dbObj = req.body;
-      console.log(dbObj.data[0].turf_user_id);
+      console.log(dbObj);
+      console.log(dbObj.turf_user_id);
       const wishlist = Wishlist({
-        turf_user_id: dbObj.data[0].turf_user_id,
+        turf_user_id: dbObj.turf_user_id,
         turf_logo: dbObj.data[0].turf_logo,
         turf_name: dbObj.data[0].turf_name,
         turf_place: dbObj.data[0].turf_place,
@@ -40,6 +41,7 @@ module.exports = {
           turf_images1: dbObj.data[0].turf_images.turf_images1,
           turf_images2: dbObj.data[0].turf_images.turf_images2,
           turf_images3: dbObj.data[0].turf_images.turf_images3,
+          turf_images4: dbObj.data[0].turf_images.turf_images4,
         },
         turf_time: {
           time_morning_start: dbObj.data[0].turf_time.time_morning_start,
@@ -81,18 +83,30 @@ module.exports = {
   }),
 
   getWhishList: asyncHandler(async (req, res, next) => {
+    const finalArray = [];
+    const finalObject = {};
     const turf_user_id = req.params.id;
     try {
       const findWhishList = await Wishlist.find({
         turf_user_id: turf_user_id,
       });
+    
+      for(let i in findWhishList){
+        let objName = findWhishList[i]["turf_name"];
+        finalObject[objName] = findWhishList[i];
+      }
+
+      for(let i in finalObject){
+        finalArray.push(finalObject[i]);
+      }
+      
 
       res
         .status(200)
         .json({
           status: true,
-          length: findWhishList.length,
-          data: findWhishList,
+          length: finalArray.length,
+          data: finalArray,
         });
     } catch (error) {
       res
