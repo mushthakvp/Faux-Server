@@ -83,25 +83,28 @@ module.exports = {
 
   getWhishList: asyncHandler(async (req, res, next) => {
     const finalArray = [];
+    const finalObject = {};
     const turf_user_id = req.params.id;
     try {
       const findWhishList = await Wishlist.find({
         turf_user_id: turf_user_id,
       });
-      for(let i = 0; i < findWhishList.length; i++){
-        for(let j = i+1; j < findWhishList.length; j++){
-          if(findWhishList[i].turf_name != findWhishList[j].turf_name){
-            finalArray.push(findWhishList[i]);
-          }
-        }
-      }
     
+      for(let i in findWhishList){
+        let objName = findWhishList[i]["turf_name"];
+        finalObject[objName] = findWhishList[i];
+      }
+
+      for(let i in finalObject){
+        finalArray.push(finalObject[i]);
+      }
+      
 
       res
         .status(200)
         .json({
           status: true,
-          length: findWhishList.length,
+          length: finalArray.length,
           data: finalArray,
         });
     } catch (error) {
