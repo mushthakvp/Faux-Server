@@ -88,7 +88,9 @@ module.exports = {
         turf_user_id: turf_user_id,
       });
 
-     const array =  Object.entries(findWhishList)
+     const array =  Object.values(findWhishList)
+
+     console.log(array);
 
       res
         .status(200)
